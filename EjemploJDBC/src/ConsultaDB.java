@@ -4,7 +4,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-//Clase para realizar consultas a la base de datos usando JDBC
+/**
+ * 
+ * @author andres.ceballoss
+ * Clase para realizar consultas a la base de datos usando JDBC
+ *
+ */
 public class ConsultaDB {
 	
 	public static void consultCities(){
