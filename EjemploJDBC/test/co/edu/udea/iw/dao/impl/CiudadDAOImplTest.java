@@ -32,6 +32,7 @@ public class CiudadDAOImplTest {
 		}
 	}
 	
+	/*Prueba para verificar que el método obtener retorna una ciudad especifica*/
 	@Test
 	public void testObtenerPorClave(){
 		CiudadDAO ciudadDAO = null;
@@ -39,8 +40,7 @@ public class CiudadDAOImplTest {
 		try{
 			ciudadDAO = new CiudadDAOImpl();
 			ciudad = ciudadDAO.obtener(1l);
-			assertNotNull(ciudad);
-			//assertEquals(ciudad.getNombre(), new String("Medellin"));
+			assertEquals(ciudad.getNombre(),"Medellin");
 		}catch(MyException e){
 			fail(e.getMessage());
 		}

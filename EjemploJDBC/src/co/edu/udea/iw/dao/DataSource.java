@@ -14,7 +14,7 @@ import co.edu.udea.iw.exception.MyException;
  * @version 1.0 Entrega conexiones activas de la base de datos
  *
  */
-public class DataSource {
+public class DataSource {	
 
 	private static Connection connection; // Singleton connection
 
