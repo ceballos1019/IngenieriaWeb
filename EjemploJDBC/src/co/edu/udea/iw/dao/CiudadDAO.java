@@ -10,7 +10,7 @@ import co.edu.udea.iw.exception.MyException;
 
 /**
  * @author andres.ceballoss
- * @version 1.0
+ * @version 1.0 
  */
 public interface CiudadDAO {
 	
@@ -19,4 +19,10 @@ public interface CiudadDAO {
 	 * @throws MyException
 	 */
 	public List<Ciudad> obtener() throws MyException;
+	
+	/**
+	 * @return una ciudad dada la clave
+	 * @throws MyException
+	 */
+	public Ciudad obtener(Long codigo) throws MyException;
 }

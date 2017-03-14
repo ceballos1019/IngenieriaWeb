@@ -5,7 +5,8 @@ package co.edu.udea.iw.exception;
 
 /**
  * @author andres.ceballoss
- *
+ * @version 1.0
+ * Clase para manejo de excepciones
  */
 public class MyException extends Exception {
 

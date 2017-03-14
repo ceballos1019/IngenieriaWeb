@@ -2,6 +2,7 @@ package co.edu.udea.iw.dto;
 /**
  * 
  * @author andres.ceballoss
+ * @version 1.0
  *
  */
 public class Ciudad {
