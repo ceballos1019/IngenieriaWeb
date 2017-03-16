@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Propiedades básicas para trabajar con Hibernate -->
+	
+		<!--  Driver de MySQL -->
+		<property name="connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+		
+		<!-- URL de la base de datos -->
+		<property name="connection.url">
+			jdbc:mysql://127.0.0.1:3306/ceballos
+		</property>
+		
+		<!-- Usuario de la base de datos -->
+		<property name="connection.username">
+			root
+		</property>
+		
+		<!-- Contraseña de la base de datos -->
+		<property name="connection.password">
+			root
+		</property>
+		
+		<!-- Propiedades adicionales  -->
+		
+		<!-- Dialecto: para especificar que motor de base de datos se esta utilizando -->
+		<property name="dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+		
+		<!-- Show SQL: Para mostrar en consola en tiempo de ejecución las consultas que esta haciendo hibernate
+					   Útil para debugging -->
+		<property name="show_sql">
+			True
+		</property>
+	</session-factory>
+</hibernate-configuration>
