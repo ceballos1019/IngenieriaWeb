@@ -12,8 +12,7 @@ import co.edu.udea.iw.exception.MyException;
 
 /**
  * @author andres.ceballoss
- * @version 1.0 Clase que entrega sesiones (conexiones) activas a la base de
- *          datos
+ * @version 1.0 Clase que entrega sesiones (conexiones) activas a la base de datos
  */
 public class DataSource {
 
