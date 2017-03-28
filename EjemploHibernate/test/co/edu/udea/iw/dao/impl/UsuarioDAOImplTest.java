@@ -22,7 +22,8 @@ public class UsuarioDAOImplTest {
 			
 			/*Imprimir en consola*/
 			StringBuilder output = new StringBuilder();
-			output.append("Usuario: ").append(usuario.getLogin()).append(" - Rol: ").append(usuario.getRol().getNombre());			
+			output.append("Usuario: ").append(usuario.getLogin()).append(" - Rol: ").append(usuario.getRol().getNombre());
+			//output.append("Usuario: ").append(usuario.getLogin());
 			System.out.println(output.toString());
 		} catch (MyException e) {
 			e.printStackTrace();

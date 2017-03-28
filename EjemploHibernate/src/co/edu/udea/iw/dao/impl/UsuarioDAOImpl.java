@@ -30,6 +30,10 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 			usuario = (Usuario) session.get(Usuario.class, login);
 		} catch(HibernateException e) {
 			throw new MyException("Error consultando el usuario", e);
+		} finally {
+			if (session != null) {
+				session.close();
+			}
 		}
 		return usuario;
 	}
