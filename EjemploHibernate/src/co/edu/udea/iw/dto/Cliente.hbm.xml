@@ -45,6 +45,12 @@
 		
 		<property name="fechaEliminacion" type="java.sql.Date">
 			<column name="FechaEliminacion"/>
-		</property>							
+		</property>		
+		
+		<!-- Mapeo maestro detalle -->		
+		<set name="direcciones">
+			<key column="Cedula"/>
+			<one-to-many class="co.edu.udea.iw.dto.Direccion" />
+		</set>					
 	</class>
 </hibernate-mapping>
