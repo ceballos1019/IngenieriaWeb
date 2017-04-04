@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/03/2017 01:21:09 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="co.edu.udea.iw.dto.Usuario" table="usuarios">
+		<id name="login" type="java.lang.String"> <!-- Nombre del atributo en la clase -->
+			<column name="Login" length="15" />  <!-- Nombre de la columna en la tabla -->
+			<generator class="assigned" /> <!-- Como se va a generar la clave primaria -->
+		</id>
+		<!-- Id: clave primaria; property: resto de columnas -->
+		<property name="nombres" type="java.lang.String">
+			<column name="Nombres" length="45" not-null="true" />
+		</property>	
+		<property name="apellidos" type="java.lang.String">
+			<column name="Apellidos" length="45" not-null="true" />
+		</property>
+		<property name="contrasena" type="java.lang.String">
+			<column name="Contrasena" length="125" not-null="true" />
+		</property>
+		
+		<!--  Lazy: proxy y Lazy: no-proxy requieren tener la sesion abierta
+			  Lazy: false  no requiere la sesion abierta 
+			  Fetch: join trae la tabla y todas las relaciones-->
+		<many-to-one class="co.edu.udea.iw.dto.Rol" name="rol" lazy="false" fetch="join">
+			<column name="Rol" length="12" not-null="true" />
+		</many-to-one>						
+	</class>
+</hibernate-mapping>

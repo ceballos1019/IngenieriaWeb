@@ -52,21 +52,4 @@ public class CiudadDAOImplTest {
 			fail(e.getMessage());
 		}
 	}
-
-	/**
-	 * Test method for {@link co.edu.udea.iw.dao.impl.CiudadDAOImpl#guardar(co.edu.udea.iw.dto.Ciudad)}.
-	 */
-	@Test
-	public void testGuardar() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link co.edu.udea.iw.dao.impl.CiudadDAOImpl#actualizar(co.edu.udea.iw.dto.Ciudad)}.
-	 */
-	@Test
-	public void testActualizar() {
-		fail("Not yet implemented");
-	}
-
 }

@@ -43,10 +43,10 @@ public class ClienteDAOImplTest {
 		try {
 			/*Crear cliente y settear los atributos*/
 			cliente = new Cliente();
-			cliente.setCedula("1");
-			cliente.setNombres("Daniel");
-			cliente.setApellidos("Pelaez");
-			cliente.setEmail("pelaez@gmail.com");
+			cliente.setCedula("2");
+			cliente.setNombres("Sergio");
+			cliente.setApellidos("Llanos");
+			cliente.setEmail("sergio@gmail.com");
 			
 			/*Crear el usuario, solo necesito el login*/
 			usuario = new Usuario();

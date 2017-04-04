@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/03/2017 01:21:09 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="co.edu.udea.iw.dto.Ciudad" table="ciudades">
+		<id name="codigo" type="java.lang.Long"> <!-- Nombre del atributo en la clase -->
+			<column name="CODIGO" precision="12" />  <!-- Nombre de la columna en la tabla -->
+			<generator class="assigned" /> <!-- Como se va a generar la clave primaria -->
+		</id>
+		<!-- Id: clave primaria; property: resto de columnas -->
+		<property name="nombre" type="java.lang.String">
+			<column name="NOMBRE" length="50" not-null="true" />
+		</property>
+		<property name="codigoArea" type="java.lang.String">
+			<column name="CODIGOAREA" length="4" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>
