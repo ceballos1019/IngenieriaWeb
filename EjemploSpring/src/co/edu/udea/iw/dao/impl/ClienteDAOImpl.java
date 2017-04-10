@@ -10,14 +10,19 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Order;
+import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.iw.dao.ClienteDAO;
+import co.edu.udea.iw.dao.UsuarioDAO;
 import co.edu.udea.iw.dto.Cliente;
+import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
 
 /**
- * @author andres.ceballoss
- *
+ * Implementación de {@link ClienteDAO}
+ * @author Andrés Ceballos Sánchez - andres.ceballos@udea.edu.co
+ * @see UsuarioDAO
+ * @version 1.0
  */
 public class ClienteDAOImpl implements ClienteDAO {
 	
@@ -40,6 +45,11 @@ public class ClienteDAOImpl implements ClienteDAO {
 	}
 
 
+	/**
+	 * Implementacion del metodo obtener()
+	 * Retorna una lista de los clientes disponibles en la base de datos
+	 * @return Lista de clientes 
+	 */
 	@Override
 	public List<Cliente> obtener() throws MyException {
 		List<Cliente> clientes = null;
@@ -55,17 +65,40 @@ public class ClienteDAOImpl implements ClienteDAO {
 		}
 		return clientes;
 	}
-
 	
+	/**
+	 * Implementación del método obtener(String)
+	 * Retorna un cliente dada su cedula
+	 * @return Cliente
+	 */
+	@Override
+	public Cliente obtener(String cedula) throws MyException {
+		Cliente cliente = null;
+		Session session = null;
+		try {
+			session = sessionFactory.getCurrentSession();
+			cliente = (Cliente) session.get(Cliente.class, cedula);
+		} catch(HibernateException e) {
+			throw new MyException("Error consultando el cliente", e);
+		}
+		return cliente;
+	}
+	
+	/**
+	 * Implementación del metodo guardar(Cliente) 
+	 * Guarda un cliente en la base de datos
+	 * @param cliente - cliente a guardar
+	 */
 	@Override
 	public void guardar(Cliente cliente) throws MyException {
 		Session session = null;
 		try {
 			session = sessionFactory.openSession();
 			session.save(cliente);			
+			session.flush();  //Esta linea para poder que siempre me guardara en la base de datos
 		} catch(HibernateException e) {
 			throw new MyException("Error guardando el cliente", e);			
 		} 
-	}
+	}	
 
 }

@@ -4,8 +4,9 @@
 package co.edu.udea.iw.dto;
 
 /**
- * @author andres.ceballoss
- * @version1.0
+ * Clase DTO para la tabla roles
+ * @author Andrés Ceballos Sánchez - andres.ceballoss@udea.edu.co
+ * @version 1.0
  */
 public class Rol {
 	

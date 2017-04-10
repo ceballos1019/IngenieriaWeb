@@ -4,9 +4,9 @@
 package co.edu.udea.iw.dto;
 
 /**
- * @author andres.ceballoss
+ * Clase DTO para la tabla usuarios
+ * @author Andrés Ceballos Sánchez - andres.ceballoss@udea.edu.co
  * @version 1.0
- *
  */
 public class Usuario {
 	

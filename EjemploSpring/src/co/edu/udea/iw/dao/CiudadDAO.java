@@ -9,26 +9,31 @@ import co.edu.udea.iw.dto.Ciudad;
 import co.edu.udea.iw.exception.MyException;
 
 /**
- * @author andres.ceballoss
- * @version 1.0 
+ * Define los métodos para acceder a las Ciudades
+ * @author Andrés Ceballos Sánchez - andres.ceballoss@udea.edu.co
+ * @version 1.0
  */
 public interface CiudadDAO {
 	
 	/**
-	 * @return La lista completa de las ciudades de la BD
+	 * Entrega la lista de ciudades disponibles en la base de datos
+	 * @return Lista de Ciudades
 	 * @throws MyException
 	 */
 	public List<Ciudad> obtener() throws MyException;
 	
 	/**
-	 * @return una ciudad dada la clave
+	 * Entrega los datos de una ciudad dado su código
+	 * @param codigo
+	 * @return una Ciudad
 	 * @throws MyException
 	 */
 	public Ciudad obtener(Long codigo) throws MyException;
 	
 	/**
+	 * Permite crear una nueva ciudad en la base de datos
+	 * @param ciudad - DTO con los datos de la ciudad a crear
 	 * @throws MyException
-	 * guarda una ciudad en la base de datos
 	 */
 	public void guardar(Ciudad ciudad) throws MyException;
 	

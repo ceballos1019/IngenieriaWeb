@@ -34,6 +34,8 @@ public class ClienteDAOImplTest {
 	@Autowired
 	private ClienteDAO clienteDAO;
 	
+	
+	
 	/**
 	 * Test method for {@link co.edu.udea.iw.dao.impl.ClienteDAOImpl#obtener()}.
 	 */
@@ -42,19 +44,34 @@ public class ClienteDAOImplTest {
 		List<Cliente> resultado = null;
 		
 		try {
-			resultado = clienteDAO.obtener();			
-			for(Cliente cliente: resultado) {
-				System.out.println(new StringBuffer(cliente.getNombres()).append(" ").append(cliente.getApellidos()));
-			}			
+			resultado = clienteDAO.obtener();					
 			assertTrue(resultado.size() > 0);
 		} catch(MyException e) {
 			e.printStackTrace();
 			fail(e.getMessage());
 		}
 	}
-
+	
+	/**
+	 * Test method for {@link co.edu.udea.iw.dao.impl.ClienteDAOImpl#obtener(java.lang.String)}.
+	 * Probar que para una cedula dada, trae un cliente no nulo
+	 */
+	@Test
+	public void testObtenerString() {		
+		Cliente cliente = null;
+		String cedulaTest = "19";
+		try {
+			cliente = clienteDAO.obtener(cedulaTest);
+			assertNotNull(cliente);			
+		} catch (MyException e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+	}
+	
 	/**
 	 * Test method for {@link co.edu.udea.iw.dao.impl.ClienteDAOImpl#guardar(co.edu.udea.iw.dto.Cliente)}.
+	 *  Probar que no se arrojen excepciones durante la creacion de una usuario
 	 */
 	@Test
 	public void testGuardar() {
@@ -63,7 +80,7 @@ public class ClienteDAOImplTest {
 		try {
 			/*Crear cliente y settear los atributos*/
 			cliente = new Cliente();
-			cliente.setCedula("5");
+			cliente.setCedula("19");
 			cliente.setNombres("Andres");
 			cliente.setApellidos("Ceballos Sanchez");
 			cliente.setEmail("ceballos@gmail.com");

@@ -7,9 +7,9 @@ import java.sql.Date;
 import java.util.Set;
 
 /**
- * @author andres.ceballoss
+ * Clase DTO para la tabla clientes
+ * @author Andrés Ceballos Sánchez - andres.ceballoss@udea.edu.co
  * @version 1.0
- *
  */
 public class Cliente {
 	

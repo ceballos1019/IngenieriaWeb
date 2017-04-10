@@ -4,11 +4,12 @@
 package co.edu.udea.iw.exception;
 
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 /**
+ * Clase para manejar nuestras propias excepciones
  * @author andres.ceballoss
  * @version 1.0
- * Clase para manejar nuestras propias excepciones
  */
 public class MyException extends Exception{
 
@@ -37,6 +38,7 @@ public class MyException extends Exception{
 	 */
 	public MyException(String message, Throwable cause) {
 		super(message, cause);
+		PropertyConfigurator.configure("log4j.properties");
 		log.error(message, cause);
 
 	}

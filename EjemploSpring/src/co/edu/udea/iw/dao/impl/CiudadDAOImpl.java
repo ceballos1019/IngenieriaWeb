@@ -13,13 +13,15 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import co.edu.udea.iw.dao.CiudadDAO;
+import co.edu.udea.iw.dao.UsuarioDAO;
 import co.edu.udea.iw.dto.Ciudad;
 import co.edu.udea.iw.exception.MyException;
 
 /**
- * @author andres.ceballoss
+ * Implementación de {@link CiudadDAO}
+ * @author Andrés Ceballos Sánchez - andres.ceballos@udea.edu.co
+ * @see UsuarioDAO
  * @version 1.0
- *
  */
 public class CiudadDAOImpl implements CiudadDAO {
 	
@@ -40,7 +42,9 @@ public class CiudadDAOImpl implements CiudadDAO {
 	}
 
 	/**
-	 * @return Lista de ciudades ImplementaciÃ³n del mÃ©todo obtener
+	 * Implementacion del metodo obtener()
+	 * Retorna una lista de las ciudades disponibles en la base de datos
+	 * @return Lista de ciudades 
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
@@ -48,7 +52,7 @@ public class CiudadDAOImpl implements CiudadDAO {
 		List<Ciudad> ciudades = new ArrayList<>();
 		Session session = null;
 		try {
-			/*No hay necesidad de cerrar la sesiÃ³n, Spring se encarga de eso*/
+			/*No hay necesidad de cerrar la sesion, Spring se encarga de eso*/
 			session = sessionFactory.getCurrentSession();
 			Criteria criteria = session.createCriteria(Ciudad.class);
 			ciudades = (List<Ciudad>) criteria.list();
@@ -59,7 +63,9 @@ public class CiudadDAOImpl implements CiudadDAO {
 	}
 
 	/**
-	 * @return una ciudad dado su codigo
+	 * Implementación del método obtener(Long)
+	 * Retorna una ciudad dado su codigo
+	 * @return Ciudad
 	 */
 	@Override
 	public Ciudad obtener(Long codigo) throws MyException {
@@ -80,14 +86,17 @@ public class CiudadDAOImpl implements CiudadDAO {
 	}
 	
 	/**
+	 * Implementación del metodo guardar(Ciudad) 
 	 * Guarda una ciudad en la base de datos
+	 * @param ciudad - ciudad a guardar
 	 */
 	@Override
 	public void guardar(Ciudad ciudad) throws MyException {
 		Session session = null;
 		try {
-			session = sessionFactory.getCurrentSession();
-			session.save(ciudad);
+			session = sessionFactory.openSession();
+			session.save(ciudad);			
+			session.flush();   //Esta linea para poder que siempre me guardara en la base de datos
 		} catch(HibernateException e) {
 			throw new MyException("Error guardando la ciudad", e);			
 		}

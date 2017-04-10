@@ -4,7 +4,8 @@
 package co.edu.udea.iw.dto;
 
 /**
- * @author andres.ceballoss
+ * Clase DTO para la tabla ciudades
+ * @author Andrés Ceballos Sánchez - andres.ceballoss@udea.edu.co
  * @version 1.0
  */
 public class Ciudad {

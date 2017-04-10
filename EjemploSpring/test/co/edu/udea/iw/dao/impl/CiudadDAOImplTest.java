@@ -5,6 +5,8 @@ package co.edu.udea.iw.dao.impl;
 
 import static org.junit.Assert.*;
 
+import java.sql.Date;
+import java.util.Calendar;
 import java.util.List;
 
 import org.junit.Test;
@@ -16,6 +18,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import co.edu.udea.iw.dao.CiudadDAO;
 import co.edu.udea.iw.dto.Ciudad;
+import co.edu.udea.iw.dto.Cliente;
+import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
 
 /**
@@ -34,6 +38,7 @@ public class CiudadDAOImplTest {
 
 	/**
 	 * Test method for {@link co.edu.udea.iw.dao.impl.CiudadDAOImpl#obtener()}.
+	 * Probar que trae al menos una ciudad
 	 */
 	@Test
 	public void testObtener() {		
@@ -49,6 +54,7 @@ public class CiudadDAOImplTest {
 
 	/**
 	 * Test method for {@link co.edu.udea.iw.dao.impl.CiudadDAOImpl#obtener(java.lang.Long)}.
+	 * Probar que para una clave dada, trae la ciudad que corresponde a esa clave
 	 */
 	@Test
 	public void testObtenerLong() {
@@ -57,6 +63,28 @@ public class CiudadDAOImplTest {
 			ciudad = ciudadDAO.obtener(1L);
 			assertEquals(ciudad.getNombre(), "Medellin");
 		} catch (MyException e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+	}
+	
+	/**
+	 * Test method for {@link co.edu.udea.iw.dao.impl.CiudadDAOImpl#guardar(co.edu.udea.iw.dto.Ciudad)}.
+	 * Probar que no se arrojen excepciones durante la creacion de una ciudad
+	 */
+	@Test
+	public void testGuardar() {
+		Ciudad ciudad = null;
+		try {
+			/*Crear ciudad y settear los atributos*/
+			ciudad = new Ciudad();
+			ciudad.setCodigo(7L);
+			ciudad.setNombre("Pereira");
+			ciudad.setCodigoArea("19");			
+			
+			/*Guardar la ciudad*/
+			ciudadDAO.guardar(ciudad);
+		} catch(MyException e) {
 			e.printStackTrace();
 			fail(e.getMessage());
 		}
