@@ -44,5 +44,12 @@
 	<bean name="ciudadDAO" class="co.edu.udea.iw.dao.impl.CiudadDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-
+	
+	<bean name="usuarioDAO" class="co.edu.udea.iw.dao.impl.UsuarioDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean name="clienteDAO" class="co.edu.udea.iw.dao.impl.ClienteDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
 </beans>

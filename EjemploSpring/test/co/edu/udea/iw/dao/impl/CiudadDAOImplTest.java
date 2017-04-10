@@ -17,7 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
 import co.edu.udea.iw.dao.CiudadDAO;
 import co.edu.udea.iw.dto.Ciudad;
 import co.edu.udea.iw.exception.MyException;
-import javassist.ClassPath;
 
 /**
  * @author andres.ceballoss
@@ -40,7 +39,7 @@ public class CiudadDAOImplTest {
 	public void testObtener() {		
 		List<Ciudad> ciudades = null;
 		try{
-			ciudades = ciudadDAO.obtener();
+			ciudades = ciudadDAO.obtener();			
 			assertTrue(ciudades.size() > 0);
 		}catch(MyException e){
 			e.printStackTrace();

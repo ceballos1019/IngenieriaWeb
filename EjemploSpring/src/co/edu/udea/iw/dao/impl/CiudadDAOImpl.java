@@ -11,7 +11,6 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 
 import co.edu.udea.iw.dao.CiudadDAO;
 import co.edu.udea.iw.dto.Ciudad;
@@ -92,11 +91,6 @@ public class CiudadDAOImpl implements CiudadDAO {
 		} catch(HibernateException e) {
 			throw new MyException("Error guardando la ciudad", e);			
 		}
-	}
-	
-	@Override
-	public void actualizar(Ciudad ciudad) throws MyException {
-		return;
-	}
+	}		
 
 }

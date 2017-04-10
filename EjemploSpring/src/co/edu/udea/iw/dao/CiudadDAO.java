@@ -32,11 +32,5 @@ public interface CiudadDAO {
 	 */
 	public void guardar(Ciudad ciudad) throws MyException;
 	
-	/**
-	 * 
-	 * @param ciudad
-	 * @throws MyException
-	 * Actualiza un registro en la base de datos
-	 */
-	public void actualizar(Ciudad ciudad) throws MyException;
+	
 }
