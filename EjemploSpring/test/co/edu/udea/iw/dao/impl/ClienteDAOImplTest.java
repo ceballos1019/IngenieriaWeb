@@ -12,6 +12,7 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
@@ -74,13 +75,14 @@ public class ClienteDAOImplTest {
 	 *  Probar que no se arrojen excepciones durante la creacion de una usuario
 	 */
 	@Test
+	@Rollback(false)
 	public void testGuardar() {
 		Cliente cliente = null;
 		Usuario usuario = null;
 		try {
 			/*Crear cliente y settear los atributos*/
 			cliente = new Cliente();
-			cliente.setCedula("19");
+			cliente.setCedula("10");
 			cliente.setNombres("Andres");
 			cliente.setApellidos("Ceballos Sanchez");
 			cliente.setEmail("ceballos@gmail.com");

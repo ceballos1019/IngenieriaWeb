@@ -18,8 +18,8 @@ import co.edu.udea.iw.dto.Ciudad;
 import co.edu.udea.iw.exception.MyException;
 
 /**
- * Implementación de {@link CiudadDAO}
- * @author Andrés Ceballos Sánchez - andres.ceballos@udea.edu.co
+ * Implementaciï¿½n de {@link CiudadDAO}
+ * @author Andrï¿½s Ceballos Sï¿½nchez - andres.ceballos@udea.edu.co
  * @see UsuarioDAO
  * @version 1.0
  */
@@ -63,7 +63,7 @@ public class CiudadDAOImpl implements CiudadDAO {
 	}
 
 	/**
-	 * Implementación del método obtener(Long)
+	 * Implementaciï¿½n del mï¿½todo obtener(Long)
 	 * Retorna una ciudad dado su codigo
 	 * @return Ciudad
 	 */
@@ -86,7 +86,7 @@ public class CiudadDAOImpl implements CiudadDAO {
 	}
 	
 	/**
-	 * Implementación del metodo guardar(Ciudad) 
+	 * Implementaciï¿½n del metodo guardar(Ciudad) 
 	 * Guarda una ciudad en la base de datos
 	 * @param ciudad - ciudad a guardar
 	 */
@@ -94,9 +94,9 @@ public class CiudadDAOImpl implements CiudadDAO {
 	public void guardar(Ciudad ciudad) throws MyException {
 		Session session = null;
 		try {
-			session = sessionFactory.openSession();
+			session = sessionFactory.getCurrentSession();
 			session.save(ciudad);			
-			session.flush();   //Esta linea para poder que siempre me guardara en la base de datos
+			//session.flush();   //Esta linea para poder que siempre me guardara en la base de datos
 		} catch(HibernateException e) {
 			throw new MyException("Error guardando la ciudad", e);			
 		}

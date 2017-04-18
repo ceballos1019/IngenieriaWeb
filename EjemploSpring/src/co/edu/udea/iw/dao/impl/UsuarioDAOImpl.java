@@ -17,8 +17,8 @@ import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
 
 /**
- * Implementación de {@link UsuarioDAO}
- * @author Andrés Ceballos Sánchez - andres.ceballos@udea.edu.co
+ * Implementaciï¿½n de {@link UsuarioDAO}
+ * @author Andrï¿½s Ceballos Sï¿½nchez - andres.ceballos@udea.edu.co
  * @see UsuarioDAO
  * @version 1.0
  */
@@ -41,7 +41,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 	}
 	
 	/**
-	 * Implementación del método obtener(String)
+	 * Implementaciï¿½n del mï¿½todo obtener(String)
 	 * Retorna un usuario dado su login o nombre de usuario
 	 * @return Usuario
 	 */
@@ -78,7 +78,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 	}
 	
 	/**
-	 * Implementación del metodo guardar(Usuario) 
+	 * Implementaciï¿½n del metodo guardar(Usuario) 
 	 * Guarda un usuario en la base de datos
 	 * @param usuario - usuario a guardar
 	 */
@@ -86,9 +86,9 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 	public void guardar(Usuario usuario) throws MyException {
 		Session session = null;
 		try {
-			session = sessionFactory.openSession();
+			session = sessionFactory.getCurrentSession();
 			session.save(usuario);			
-			session.flush();  //Esta linea para poder que siempre me guardara en la base de datos
+			//session.flush();  //Esta linea para poder que siempre me guardara en la base de datos
 		} catch(HibernateException e) {
 			throw new MyException("Error guardando el usuario", e);			
 		} 

@@ -52,4 +52,9 @@
 	<bean name="clienteDAO" class="co.edu.udea.iw.dao.impl.ClienteDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+	
+	<bean name="clienteBL" class="co.edu.udea.iw.bl.ClienteBL">
+		<property name="clienteDAO" ref="clienteDAO"></property>
+		<property name="usuarioDAO" ref="usuarioDAO"></property>
+	</bean>
 </beans>

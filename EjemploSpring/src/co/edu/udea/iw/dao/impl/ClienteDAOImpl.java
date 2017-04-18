@@ -19,8 +19,8 @@ import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
 
 /**
- * Implementación de {@link ClienteDAO}
- * @author Andrés Ceballos Sánchez - andres.ceballos@udea.edu.co
+ * Implementaciï¿½n de {@link ClienteDAO}
+ * @author Andrï¿½s Ceballos Sï¿½nchez - andres.ceballos@udea.edu.co
  * @see UsuarioDAO
  * @version 1.0
  */
@@ -67,7 +67,7 @@ public class ClienteDAOImpl implements ClienteDAO {
 	}
 	
 	/**
-	 * Implementación del método obtener(String)
+	 * Implementaciï¿½n del mï¿½todo obtener(String)
 	 * Retorna un cliente dada su cedula
 	 * @return Cliente
 	 */
@@ -85,7 +85,7 @@ public class ClienteDAOImpl implements ClienteDAO {
 	}
 	
 	/**
-	 * Implementación del metodo guardar(Cliente) 
+	 * Implementaciï¿½n del metodo guardar(Cliente) 
 	 * Guarda un cliente en la base de datos
 	 * @param cliente - cliente a guardar
 	 */
@@ -93,9 +93,9 @@ public class ClienteDAOImpl implements ClienteDAO {
 	public void guardar(Cliente cliente) throws MyException {
 		Session session = null;
 		try {
-			session = sessionFactory.openSession();
+			session = sessionFactory.getCurrentSession();
 			session.save(cliente);			
-			session.flush();  //Esta linea para poder que siempre me guardara en la base de datos
+			//session.flush();  //Esta linea para poder que siempre me guardara en la base de datos
 		} catch(HibernateException e) {
 			throw new MyException("Error guardando el cliente", e);			
 		} 
