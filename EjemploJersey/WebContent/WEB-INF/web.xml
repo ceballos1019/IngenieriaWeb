@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>EjemploJersey</display-name>
+   
+  <!-- Definir un servlet para que responda con las peticiones del servicio web -->  
+  <servlet>
+  	<servlet-name>ServiciosCeballos</servlet-name> 
+  	<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+  	<!-- Parametros inciales que tal vez el servlet necesita -->
+  	<init-param>
+  		<param-name>com.sun.jersey.config.property.packages</param-name>
+  		<param-value>co.edu.udea.iw.ws</param-value>
+  	</init-param>
+  	<!-- El servlet es invocado cuando se carga la pagina, el indice indica prioridad 
+  	(en caso de ser muchos servlets) o prerrequisitos-->
+  	<load-on-startup>1</load-on-startup>  
+  </servlet>
+  
+  <!-- Definir el mapping del servlet, la ruta a la cual va a responder -->
+  <servlet-mapping>
+  	<servlet-name>ServiciosCeballos</servlet-name>
+  	<!-- Cuando encuentre esat ruta, este servlet es el que responde -->
+  	<url-pattern>/ceballos/*</url-pattern>  
+  </servlet-mapping>
+</web-app>
