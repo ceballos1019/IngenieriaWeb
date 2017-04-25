@@ -3,6 +3,7 @@
 	<name>EjemploJersey</name>
 	<comment></comment>
 	<projects>
+		<project>EjemploSpring</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
