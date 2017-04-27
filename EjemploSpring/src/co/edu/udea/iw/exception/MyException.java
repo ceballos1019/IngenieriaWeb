@@ -38,7 +38,7 @@ public class MyException extends Exception{
 	 */
 	public MyException(String message, Throwable cause) {
 		super(message, cause);
-		PropertyConfigurator.configure("log4j.properties");
+		//PropertyConfigurator.configure("log4j.properties");
 		log.error(message, cause);
 
 	}

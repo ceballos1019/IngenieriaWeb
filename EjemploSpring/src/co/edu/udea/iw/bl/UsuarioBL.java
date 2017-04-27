@@ -1,5 +1,7 @@
 package co.edu.udea.iw.bl;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import co.edu.udea.iw.dao.UsuarioDAO;
 import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
@@ -10,6 +12,7 @@ import co.edu.udea.iw.util.encode.Cifrado;
  * @author Andres Ceballos Sanchez - andres.ceballoss@udea.edu.co
  * @version 1.0
  */
+@Transactional
 public class UsuarioBL {
 	
 	/* DAO del usuario que es inyectado por Spring*/

@@ -6,6 +6,8 @@ package co.edu.udea.iw.bl;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import co.edu.udea.iw.dao.ClienteDAO;
 import co.edu.udea.iw.dao.UsuarioDAO;
 import co.edu.udea.iw.dto.Cliente;
@@ -17,7 +19,7 @@ import co.edu.udea.iw.exception.MyException;
  * @author Andres Ceballos Sanchez - andres.ceballoss@udea.edu.co
  * @version 1.0 
  */
-
+@Transactional
 public class ClienteBL {
 	
 	private ClienteDAO clienteDAO;
