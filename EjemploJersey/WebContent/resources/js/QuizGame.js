@@ -1,10 +1,7 @@
-/**
- * 
- */
-
 var quiz= angular.module('quizModule', []);
 
 quiz.controller('quizController', function($scope){
+	/*Arreglo con las preguntas*/
 	$scope.questions = [{
 		id:1,
 		text: 'Pregunta 1',
@@ -34,22 +31,32 @@ quiz.controller('quizController', function($scope){
 				  {id:3, text: 'Respuesta 3.3'}]
 	}];
 	
+	/*Variables auxiliares para calificar las respuestas*/
 	$scope.correctAnswers = 0;
 	$scope.userState = '';
+	$scope.showResult = false;
 	
-	$scope.validate = function(question) {
-		if(question.correctAnswer == question.userAnswer) {
-			$scope.correctAnswers++;
-			question.state = 'ok';
-		} else {
-			if(question.state == 'ok' && $scope.correctAnswers > 0) {
-				$scope.correctAnswers--;
+	/*Función para validar las respuestas*/
+	$scope.validate = function() {
+		$scope.correctAnswers = 0;
+		
+		/*Recorrer el arreglo comparando las respuestas*/
+		$scope.questions.forEach(function(question) {
+			if(question.correctAnswer == question.userAnswer) {
+				$scope.correctAnswers++;
+				question.state = 'ok';
+			} else {				
+				question.state = 'error';
 			}
-			question.state = 'error';
-		}
+		});		
+		/*Organizar la salida en pantalla con el resultado*/
 		userState();
+		
+		/*Mostrar el resultado*/
+		$scope.showResult = true;
 	};
-	
+		
+	/*Función para calcular el numero de respuestas correctas y definir el icono a mostrar*/
 	function userState() {
 		var total = $scope.correctAnswers / $scope.questions.length;
 		

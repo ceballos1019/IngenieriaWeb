@@ -14,13 +14,13 @@
 				<p class="estado-{{question.state}}">{{question.text}}</p>
 				<div ng-repeat="answer in question.answers">
 					<input type="radio" value="{{answer.id}}" name="question{{question.id}}"
-					id="question{{question.id}}{{answer.id}}" ng-model="question.userAnswer"
-					ng-change="validate(question)">
+					id="question{{question.id}}{{answer.id}}" ng-model="question.userAnswer">
 					<label for="question{{question.id}}{{answer.id}}">{{answer.text}}</label>
 				</div>
-			</div>			
-		</div>
-		<div class="estadoUsuario {{userState}}">
+			</div>
+			<input id="gradeButton" type="button" value="Calificar" ng-click="validate()">			
+		</div>		
+		<div class="estadoUsuario {{userState}}" ng-show="showResult">
 			<span>Has acertado {{correctAnswers}} de 3</span>
 		</div>
 	</div>
