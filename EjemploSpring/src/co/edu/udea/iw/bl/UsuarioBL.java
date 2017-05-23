@@ -56,14 +56,14 @@ public class UsuarioBL {
 		
 		/*Verificar que el usuario exista en la base de datos*/
 		if(usuario == null) {
-			throw new MyException("El usuario o la contrase�a es incorrecta");
+			throw new MyException("El usuario2 o la contrase�a es incorrecta");
 		}
 		
 		cifrado = new Cifrado();
 		
 		/*Validar que la contrase�a ingresada corresponda con la contrase�a en la base de datos*/ 
 		if(!cifrado.encrypt(password).equals(usuario.getContrasena())) {
-			throw new MyException("El usuario o la contrase�a es incorrecta");
+			throw new MyException("El usuario3 o la contrase�a es incorrecta");
 		}		
 	}
 }

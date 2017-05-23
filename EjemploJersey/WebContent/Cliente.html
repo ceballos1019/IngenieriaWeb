@@ -1,0 +1,21 @@
+<div>
+	<form ng-submit="guardar()">
+		<div>
+			<label for="cedula">Cédula*:</label> <input id="cedula" type="text"
+				placeholder="Cédula de ciudadania" ng-model="cliente.cedula" required>
+		</div>
+		<div>
+			<label for="nombre">Nombre*:</label> <input id="nombre" type="text"
+				placeholder="Nombres" ng-model="cliente.nombre" required>
+		</div>
+		<div>
+			<label for="apellidos">Apellidos*:</label> <input id="apelidos" type="text"
+				placeholder="Apellidos" ng-model="cliente.apellido" required>
+		</div>
+		<div>
+			<label for="email">Correo electrónico*:</label> <input id="email" type="email"
+				placeholder="Correo electrónico" ng-model="cliente.email" required>
+		</div>
+		<input type="submit" value="Guardar">
+	</form>
+</div>

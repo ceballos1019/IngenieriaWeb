@@ -23,6 +23,7 @@ import co.edu.udea.iw.dto.Cliente;
 import co.edu.udea.iw.dto.Rol;
 import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
+import co.edu.udea.iw.util.encode.Cifrado;
 
 /**
  * @author andres.ceballoss
@@ -92,10 +93,11 @@ public class UsuarioDAOImplTest {
 		try {
 			/*Crear usuario y settear los atributos*/
 			usuario = new Usuario();
-			usuario.setLogin("ceballos");
+			usuario.setLogin("test");
 			usuario.setNombres("Andres");
 			usuario.setApellidos("Ceballos");
-			usuario.setContrasena("123456789");			
+			Cifrado c = new Cifrado();			
+			usuario.setContrasena(c.encrypt("123456789"));			
 			
 			/*Crear el Rol, solo necesito el codigo*/
 			rol = new Rol();

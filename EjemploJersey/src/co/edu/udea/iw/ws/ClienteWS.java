@@ -36,7 +36,7 @@ public class ClienteWS {
 
 	@Autowired
 	private ClienteBL clienteBL;
-
+	
 	/**
 	 * 
 	 * @param cedula
