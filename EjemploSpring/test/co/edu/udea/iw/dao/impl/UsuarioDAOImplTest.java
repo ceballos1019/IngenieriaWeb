@@ -45,7 +45,7 @@ public class UsuarioDAOImplTest {
 	@Test
 	public void testObtenerString() {		
 		Usuario usuario = null;
-		String loginTest = "elver";
+		String loginTest = "test";
 		try {
 			usuario = usuarioDAO.obtener(loginTest);
 			assertNotNull(usuario);

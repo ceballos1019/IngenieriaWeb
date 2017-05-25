@@ -34,13 +34,13 @@ public class UsuarioWS {
 	 * @return
 	 */
 	@GET
-	@Produces(MediaType.TEXT_HTML)
+	@Produces(MediaType.APPLICATION_JSON)
 	public String autenticar(@QueryParam("login") String login, @QueryParam("pass") String password) {
 		
 		String retorno = "";
 		
 		try {
-			usuarioBL.validar(login, password);
+			usuarioBL.validar(login, password);			
 		} catch(MyException e) {
 			return e.getMessage();
 		}
